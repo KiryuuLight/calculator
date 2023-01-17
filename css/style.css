@@ -1,0 +1,90 @@
+:root {
+  --display: #212121;
+  --operations: #aa6678;
+  --primaryColorText: #ececec;
+  --secondaryColorText: #9e9e9e;
+  --buttonPrimaryColor: #f5f5f5;
+  --buttonSecondaryColor: #894eda;
+  --buttonResultColor: #e62f89;
+}
+
+/* Tag */
+
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(173, 103, 192, 1) 0%,
+    rgba(225, 133, 138, 1) 100%
+  );
+}
+
+p {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+.display {
+  background-color: var(--display);
+}
+
+.operations {
+  color: var(--operations);
+}
+
+.result {
+  color: var(--primaryColorText);
+}
+
+/* Btn modifications */
+
+.btn {
+  border-radius: 0 !important;
+  box-shadow: 12px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.btn-white {
+  color: var(--secondaryColorText) !important;
+  background-color: var(--buttonPrimaryColor) !important;
+}
+
+.btn-purple {
+  color: var(--primaryColorText) !important;
+  background-color: var(--buttonSecondaryColor) !important;
+}
+
+.btn-pink {
+  color: var(--primaryColorText) !important;
+  background-color: var(--buttonResultColor) !important;
+}
+
+.round-btn-left {
+  border-bottom-left-radius: 4px !important;
+}
+
+.round-btn-right {
+  border-bottom-right-radius: 4px !important;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.row > * {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.btn-height {
+  min-height: 800px !important;
+}
+
+/* Text */
+
+.text {
+  font-size: 3rem;
+}
