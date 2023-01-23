@@ -21,25 +21,31 @@
     <title>Calculator</title>
   </head>
   <body>
-    <div class="text text-center my-5">My Calculator</div>
+    <div class="text text-center my-4">My Calculator</div>
 
     <div class="container">
       <div class="display text-end p-4 rounded-top">
         <div
           class="operations my-2 d-flex justify-content-end"
           id="displayOperation"
-        ></div>
-        <div class="result my-2" id="displayResult">
-          <p class="text">100,6</p>
+        >
+          &#8203;
+        </div>
+        <div class="result my-2 d-flex justify-content-end" id="displayResult">
+          <p class="text">0</p>
         </div>
       </div>
-      <div class="buttons text-center">
+      <div class="buttons text-center" id="buttons">
         <div class="row">
           <div class="col d-grid">
-            <button type="button" class="btn btn-white p-4">%</button>
+            <button type="button" class="btn btn-white p-4" id="percentage">
+              %
+            </button>
           </div>
           <div class="col d-grid">
-            <button type="button" class="btn btn-white p-4">+/-</button>
+            <button type="button" class="btn btn-white p-4" id="plusMinus">
+              +/-
+            </button>
           </div>
           <div class="col d-grid">
             <button type="button" class="btn btn-white p-4" id="clear">
@@ -140,7 +146,9 @@
             </button>
           </div>
           <div class="col d-grid">
-            <button type="button" class="btn btn-white p-4">,</button>
+            <button type="button" class="btn btn-white p-4" id="comma">
+              .
+            </button>
           </div>
           <div class="col-6 d-grid">
             <button
@@ -153,9 +161,22 @@
           </div>
         </div>
       </div>
+
+      <div>
+        <div>
+          <div class="fs-5 text-center my-4">
+            <p>Keyboard Settings</p>
+            <p class="text-start">Enter -> Return the operation entered</p>
+            <p class="text-start">Delete -> for Clear all Values</p>
+            <p class="text-start">Backspace -> Delete one number</p>
+            <p class="text-start">C -> for change the sign</p>
+            <p class="text-start">% -> Divide the number between 100</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <footer class="position-relative m-5">
+    <footer class="position-relative m-4">
       <p class="text-center">Created by &copyLight</p>
     </footer>
   </body>

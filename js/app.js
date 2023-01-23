@@ -1,27 +1,118 @@
 import * as functions from './functions.js';
 
+/* Button container */
+
+const btnContainer = document.getElementById('buttons');
+
+document.addEventListener('keydown', (e) => {
+  console.log(e.key);
+  if (functions.regNumber.test(e.key)) {
+    functions.removeZero(functions.resultContent);
+    functions.makeOperations(e, 'keyboard');
+  }
+
+  if (functions.regOperators.test(e.key)) {
+    functions.displayHead(functions.operationContent, e, 'keyboard');
+  }
+
+  if (functions.regSpecial.test(e.key)) {
+    switch (e.key) {
+      case 'Enter':
+        functions.pressEqual();
+        break;
+      case 'Delete':
+        functions.clearAllValues();
+        break;
+      case 'C': //COrregir para que acepte mayus y minus
+        functions.plusOrMinus();
+      case '.':
+        functions.addComma();
+      case '%':
+        functions.percentageValue();
+      case 'Backspace':
+        functions.deleteNumber();
+      default:
+        break;
+    }
+  }
+});
+
 /* Buttons */
 
-const buttonZero = document.getElementById('numberZero');
-const buttonOne = document.getElementById('numberOne');
-const buttonTwo = document.getElementById('numberTwo');
-const buttonThree = document.getElementById('numberThree');
-const buttonFour = document.getElementById('numberFour');
-const buttonFive = document.getElementById('numberFive');
-const buttonSix = document.getElementById('numberSix');
-const buttonSeven = document.getElementById('numberSeven');
-const buttonEight = document.getElementById('numberEight');
-const buttonNine = document.getElementById('numberNine');
+const btnZero = document.getElementById('numberZero');
+const btnOne = document.getElementById('numberOne');
+const btnTwo = document.getElementById('numberTwo');
+const btnThree = document.getElementById('numberThree');
+const btnFour = document.getElementById('numberFour');
+const btnFive = document.getElementById('numberFive');
+const btnSix = document.getElementById('numberSix');
+const btnSeven = document.getElementById('numberSeven');
+const btnEight = document.getElementById('numberEight');
+const btnNine = document.getElementById('numberNine');
+
+/* Operators */
+
+const btnEqual = document.getElementById('calculateResult');
+const btnAdd = document.getElementById('add');
+const btnSubtract = document.getElementById('subtract');
+const btnMultiply = document.getElementById('multiply');
+const btnDivide = document.getElementById('divide');
+
+/* Some other functions */
+
+const btnClear = document.getElementById('clear');
+const btnPercentage = document.getElementById('percentage');
+const btnPlusMinus = document.getElementById('plusMinus');
+const btnComma = document.getElementById('comma');
 
 /* Display operations */
 
-const displayOperation = document.getElementById('displayOperation');
+/* Event listeners */
 
-/* Display result */
+const numbers = [
+  btnZero,
+  btnOne,
+  btnTwo,
+  btnThree,
+  btnFour,
+  btnFive,
+  btnSix,
+  btnSeven,
+  btnEight,
+  btnNine,
+];
 
-const displayResult = document.getElementById('displayResult');
+numbers.forEach((element) => {
+  element.addEventListener('click', (e) => {
+    functions.removeZero(functions.resultContent);
+    functions.makeOperations(e, 'click');
+  });
+});
 
-const detectInput = document.addEventListener('click', (e) => {
-  console.log(e.target.textContent);
-  functions.display(e);
+const operators = [btnAdd, btnSubtract, btnMultiply, btnDivide];
+
+operators.forEach((element) => {
+  element.addEventListener('click', (e) => {
+    functions.displayHead(functions.operationContent, e, 'click');
+  });
+});
+
+btnEqual.addEventListener('click', (e) => {
+  functions.pressEqual();
+});
+
+btnClear.addEventListener('click', (e) => {
+  functions.clearAllValues();
+});
+
+btnPlusMinus.addEventListener('click', (e) => {
+  functions.plusOrMinus();
+});
+
+btnPercentage.addEventListener('click', (e) => {
+  functions.percentageValue();
+});
+
+btnComma.addEventListener('click', (e) => {
+  functions.addComma();
 });
