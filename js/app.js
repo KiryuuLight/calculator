@@ -23,14 +23,18 @@ document.addEventListener('keydown', (e) => {
       case 'Delete':
         functions.clearAllValues();
         break;
-      case 'C': //COrregir para que acepte mayus y minus
+      case 'C':
         functions.plusOrMinus();
+        break;
       case '.':
         functions.addComma();
+        break;
       case '%':
         functions.percentageValue();
+        break;
       case 'Backspace':
         functions.deleteNumber();
+        break;
       default:
         break;
     }

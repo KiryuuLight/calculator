@@ -295,4 +295,8 @@ export const deleteNumber = () => {
     return;
   }
   resultContent.removeChild(resultContent.lastChild);
+  const p = document.createElement('p');
+  p.textContent = '0';
+  p.className = 'text';
+  resultContent.appendChild(p);
 };
